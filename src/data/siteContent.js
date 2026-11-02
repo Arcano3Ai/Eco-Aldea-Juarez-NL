@@ -63,6 +63,7 @@ export const SITE_CONTENT = {
     primaryCta: 'CONOCE NUESTRO PROYECTO',
     primaryHref: '#filosofia',
     secondaryCta: 'QUIERO PARTICIPAR',
+    videoSrc: 'assets/video/hero-eco-aldea.mp4',
     backgroundImage: 'assets/images/parallax/parallax-bosque-nl.jpg',
     parallaxBackgrounds: [
       'assets/images/parallax/parallax-bosque-nl.jpg',

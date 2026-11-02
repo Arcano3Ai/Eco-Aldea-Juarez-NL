@@ -193,9 +193,15 @@ test('4. HTML Semántico, SEO, Open Graph, Accesibilidad y Ausencia de Backend/F
     seenSrcs.set(src, true);
   }
 
-  // Lightbox, música ambiental autoplay y botón flotante de WhatsApp
+  // Lightbox, video hero 720x720, música ambiental autoplay y botón flotante de WhatsApp
   assert.match(html, /id="lightbox-modal"/);
   assert.match(html, /role="dialog"/);
+  assert.match(html, /id="hero-brand-video"[^>]*src="assets\/video\/hero-eco-aldea\.mp4"/i);
+  assert.ok(
+    fs.existsSync(path.resolve(ROOT, 'assets/video/hero-eco-aldea.mp4')),
+    'El video oficial del Hero assets/video/hero-eco-aldea.mp4 debe existir en disco'
+  );
+  assert.match(html, /class="[^"]*hero-floating-cta-dock[^"]*"/);
   assert.match(html, /id="bg-music-audio"[^>]*src="assets\/audio\/eco-ecoaldea\.mp3"[^>]*autoplay/i);
   assert.ok(
     fs.existsSync(path.resolve(ROOT, 'assets/audio/eco-ecoaldea.mp3')),

@@ -538,15 +538,16 @@ ul {
 }
 
 /* ==========================================================================
-   2. HERO SECTION — IMPACTO CINEMATOGRÁFICO
+   2. HERO SECTION — ESCENARIO DE VIDEO CUADRADO (720×720) + CTA FLOTANTE
    ========================================================================== */
 .hero-section {
   position: relative;
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-top: 6.25rem;
-  padding-bottom: 6.75rem;
+  justify-content: center;
+  padding-top: 5.5rem;
+  padding-bottom: 2.75rem;
   color: var(--text-on-dark);
   overflow: hidden;
   background-color: var(--forest-deep);
@@ -567,59 +568,111 @@ ul {
   object-position: center 42%;
   transform: translate3d(0, 0, 0) scale(1.22);
   will-change: transform;
-  filter: saturate(1.12) contrast(1.04);
+  filter: blur(10px) saturate(1.18) brightness(0.75);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg,
-      rgba(12, 28, 19, 0.72) 0%,
-      rgba(18, 39, 28, 0.42) 48%,
-      rgba(12, 28, 19, 0.84) 100%),
-    radial-gradient(circle at 75% 25%, rgba(233, 196, 106, 0.22), transparent 55%);
+    radial-gradient(circle at 50% 44%, rgba(232, 168, 56, 0.28) 0%, rgba(38, 74, 49, 0.82) 56%, rgba(15, 33, 22, 0.94) 100%),
+    url('../../assets/images/brand/patron-milpa.jpg');
+  background-size: cover, 520px auto;
+  background-blend-mode: normal, soft-light;
 }
 
-/* Capas flotantes multicapa en el Hero para acentuar profundidad 3D Parallax */
-.hero-parallax-decor {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
+.hero-video-stage-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.35rem;
+  width: 100%;
+}
+
+.hero-video-frame {
+  position: relative;
+  width: min(90vw, 66svh);
+  max-width: 620px;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-xl);
   overflow: hidden;
-}
-
-.parallax-orb {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
+  background: var(--warm-white);
+  border: 3px solid var(--sun-amber);
+  box-shadow:
+    0 28px 64px rgba(0, 0, 0, 0.55),
+    0 0 0 6px rgba(184, 107, 75, 0.34),
+    0 0 48px rgba(232, 168, 56, 0.24);
   will-change: transform;
 }
 
-.parallax-orb--sun {
-  top: 12%;
-  right: 8%;
-  width: 18rem;
-  height: 18rem;
-  background: radial-gradient(circle, rgba(233, 196, 106, 0.28) 0%, rgba(233, 196, 106, 0) 70%);
-  filter: blur(8px);
+.hero-brand-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background-color: var(--warm-white);
 }
 
-.parallax-orb--leaf-left {
-  bottom: 14%;
-  left: -2rem;
-  width: 9rem;
-  height: 9rem;
-  color: rgba(233, 196, 106, 0.24);
+/* Barra CTA Flotante en el Hero */
+.hero-floating-cta-dock {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background: rgba(24, 49, 33, 0.84);
+  border: 1.5px solid rgba(232, 168, 56, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.42),
+    0 0 0 4px rgba(184, 107, 75, 0.2);
+  animation: heroCtaFloat 3.8s ease-in-out infinite;
 }
 
-.parallax-orb--leaf-right {
-  top: 22%;
-  right: 4%;
-  width: 7.5rem;
-  height: 7.5rem;
-  color: rgba(142, 164, 128, 0.28);
+@keyframes heroCtaFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.hero-floating-cta-btn {
+  padding: 0.8rem 1.45rem;
+  min-height: 2.85rem;
+  font-size: 0.85rem;
+}
+
+.hero-floating-cta-secondary {
+  padding: 0.8rem 1.35rem;
+  min-height: 2.85rem;
+  font-size: 0.82rem;
+}
+
+/* ==========================================================================
+   2.B SECCIÓN DE BIENVENIDA Y MANIFIESTO (Contenido bajado debajo del Hero)
+   ========================================================================== */
+.hero-lowered-manifesto {
+  position: relative;
+  background-color: var(--forest-brand);
+  background-image:
+    linear-gradient(180deg, rgba(24, 49, 33, 0.96) 0%, rgba(38, 74, 49, 0.94) 100%),
+    url('../../assets/images/brand/patron-milpa.jpg');
+  background-size: cover, 480px auto;
+  color: var(--text-on-dark);
+  border-top: 2px solid rgba(232, 168, 56, 0.35);
+  border-bottom: 2px solid rgba(184, 107, 75, 0.35);
+  overflow: hidden;
 }
 
 .hero-grid {

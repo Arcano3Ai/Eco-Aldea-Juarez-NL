@@ -145,10 +145,10 @@
 
   <main id="contenido-principal">
     <!-- ===================================================================
-         2. EXPERIENCIA PRINCIPAL — HERO SECTION (Parallax Multicapa #1)
+         2. EXPERIENCIA PRINCIPAL — HERO VIDEO SHOWCASE (720×720) + CTA FLOTANTE
          =================================================================== -->
-    <section id="inicio" class="hero-section" data-parallax-scene
-      aria-label="Presentación principal de Eco Aldea Juárez NL">
+    <section id="inicio" class="hero-section hero-section--video" data-parallax-scene
+      aria-label="Video oficial de Eco Aldea Juárez NL">
       <div class="hero-bg-wrapper">
         <img src="assets/images/parallax/parallax-bosque-nl.jpg"
           alt="Vista panorámica al atardecer de un huerto comunitario agroecológico con camas de cultivo en madera y las montañas de Nuevo León al fondo"
@@ -157,22 +157,53 @@
         <div class="hero-overlay"></div>
       </div>
 
-      <!-- Elementos botánicos y solares flotantes en contra-parallax -->
-      <div class="hero-parallax-decor" aria-hidden="true">
-        <div class="parallax-orb parallax-orb--sun" data-parallax="-0.28" data-parallax-scale="1"
-          data-parallax-mouse="1.5"></div>
-        <svg class="parallax-orb parallax-orb--leaf-left" viewBox="0 0 120 120" fill="none" stroke="currentColor"
-          stroke-width="1.5" data-parallax="-0.34" data-parallax-scale="1" data-parallax-mouse="1.2">
-          <path d="M20 100 C20 40, 80 20, 105 15 C100 45, 80 95, 20 100 Z" />
-          <path d="M20 100 C45 75, 75 45, 105 15" />
-        </svg>
-        <svg class="parallax-orb parallax-orb--leaf-right" viewBox="0 0 120 120" fill="none" stroke="currentColor"
-          stroke-width="1.5" data-parallax="-0.24" data-parallax-scale="1" data-parallax-mouse="-1.1">
-          <circle cx="60" cy="60" r="46" stroke-dasharray="6 6" />
-          <path d="M60 20 C78 42, 78 78, 60 100 C42 78, 42 42, 60 20 Z" />
-        </svg>
-      </div>
+      <!-- Escenario Central Limpio para el Video Cuadrado (720×720) sin recortes ni barras negras -->
+      <div class="container hero-video-stage-wrap">
+        <div class="hero-video-frame" data-parallax="-0.08" data-parallax-scale="1" data-parallax-mouse="0.45">
+          <video
+            id="hero-brand-video"
+            class="hero-brand-video"
+            src="assets/video/hero-eco-aldea.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="auto"
+            aria-label="Video animado oficial de Eco Aldea Juárez NL con semilla germinando, raíces, milpa y sol naciente"
+          ></video>
+        </div>
 
+        <!-- CTA Flotante sobre la base del Hero -->
+        <div class="hero-floating-cta-dock" role="region" aria-label="Acciones rápidas de participación">
+          <a href="https://wa.me/528117164618?text=Hola%2C%20conoc%C3%AD%20Eco%20Aldea%20Ju%C3%A1rez%20NL%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20el%20proyecto%20y%20c%C3%B3mo%20puedo%20participar."
+            class="btn btn--primary hero-floating-cta-btn" data-whatsapp-cta target="_blank" rel="noopener noreferrer">
+            <svg class="wa-plant-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 20h10" />
+              <path d="M10 20c5.5-2.5.8-6.4 3-10" />
+              <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" />
+              <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
+            </svg>
+            <span>QUIERO PARTICIPAR (WhatsApp)</span>
+          </a>
+
+          <a href="#manifiesto" class="btn btn--outline-light hero-floating-cta-secondary" data-nav-link>
+            <span>CONOCE NUESTRO PROYECTO</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 5v14" />
+              <path d="m19 12-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         2.B SECCIÓN DE BIENVENIDA Y MANIFIESTO (Contenido bajado desde el Hero)
+         =================================================================== -->
+    <section id="manifiesto" class="hero-lowered-manifesto section-padding" data-parallax-scene
+      aria-label="Manifiesto principal de Eco Aldea Juárez NL">
       <div class="container hero-grid">
         <div class="hero-content" data-reveal>
           <div class="hero-badge-pill">
@@ -226,13 +257,6 @@
           </div>
         </aside>
       </div>
-
-      <a href="#filosofia" class="scroll-down-indicator" data-nav-link aria-label="Desplazarse a Nuestra Filosofía">
-        <span>Explorar</span>
-        <span class="scroll-mouse" aria-hidden="true">
-          <span class="scroll-wheel"></span>
-        </span>
-      </a>
     </section>
 
     <!-- ===================================================================
