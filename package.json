@@ -1,0 +1,13 @@
+{
+  "name": "eco-aldea-juarez-nl",
+  "version": "1.0.0",
+  "description": "Landing page institucional, ecológica y comunitaria para Eco Aldea Juárez NL — Iniciativa de apoyo digital por ARCANO SOLUTIONS",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/landing.test.mjs",
+    "start": "node scripts/serve.mjs",
+    "dev": "node scripts/serve.mjs"
+  },
+  "author": "ARCANO SOLUTIONS",
+  "license": "MIT"
+}
