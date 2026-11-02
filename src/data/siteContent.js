@@ -16,6 +16,7 @@ export const SITE_CONTENT = {
     stampLogo: 'assets/images/brand/logo-sello-tierra.png',
     secondarySeedIcon: 'assets/images/brand/icono-semilla-secundario.png',
     favicon: 'assets/images/brand/favicon.png',
+    ogShareImage: 'assets/images/brand/og-whatsapp-share.jpg',
     pillarIcons: [
       'assets/images/brand/pilar-01-cultura-tierra.png',
       'assets/images/brand/pilar-02-conservacion-semillas.png',

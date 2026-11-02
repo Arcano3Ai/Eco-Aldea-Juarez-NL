@@ -116,6 +116,7 @@ test('3. Existencia física de todas las fotografías locales y activos de Ident
     SITE_CONTENT.brand.stampLogo,
     SITE_CONTENT.brand.secondarySeedIcon,
     SITE_CONTENT.brand.favicon,
+    SITE_CONTENT.brand.ogShareImage,
     ...SITE_CONTENT.brand.pillarIcons,
     ...SITE_CONTENT.brand.patterns,
     SITE_CONTENT.hero.backgroundImage,
@@ -161,7 +162,9 @@ test('4. HTML Semántico, SEO, Open Graph, Accesibilidad y Ausencia de Backend/F
   assert.match(html, /<meta\s+name="description"\s+content="[^"]*Juárez,\s*Nuevo León[^"]*"/i);
   assert.match(html, /property="og:title"/);
   assert.match(html, /property="og:description"/);
-  assert.match(html, /property="og:image"/);
+  assert.match(html, /property="og:image"\s+content="assets\/images\/brand\/og-whatsapp-share\.jpg"/);
+  assert.match(html, /property="og:image:width"\s+content="1200"/);
+  assert.match(html, /property="og:image:height"\s+content="630"/);
 
   // Jerarquía de encabezados y textos clave
   const h1Matches = html.match(/<h1[\s>]/gi) || [];
