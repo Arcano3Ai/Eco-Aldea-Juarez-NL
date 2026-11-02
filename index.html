@@ -145,35 +145,24 @@
 
   <main id="contenido-principal">
     <!-- ===================================================================
-         2. EXPERIENCIA PRINCIPAL — HERO VIDEO SHOWCASE (720×720) + CTA FLOTANTE
+         2. EXPERIENCIA PRINCIPAL — HERO CON VIDEO A PANTALLA COMPLETA SIN OPACIDAD
          =================================================================== -->
-    <section id="inicio" class="hero-section hero-section--video" data-parallax-scene
+    <section id="inicio" class="hero-section hero-section--video"
       aria-label="Video oficial de Eco Aldea Juárez NL">
-      <div class="hero-bg-wrapper">
-        <img src="assets/images/parallax/parallax-bosque-nl.jpg"
-          alt="Vista panorámica al atardecer de un huerto comunitario agroecológico con camas de cultivo en madera y las montañas de Nuevo León al fondo"
-          class="hero-bg-image" data-parallax="0.38" data-parallax-scale="1.24" data-parallax-mouse="-0.9"
-          fetchpriority="high" />
-        <div class="hero-overlay"></div>
-      </div>
+      <video
+        id="hero-brand-video"
+        class="hero-brand-video"
+        src="assets/video/hero-eco-aldea.mp4"
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="auto"
+        aria-label="Video animado oficial de Eco Aldea Juárez NL con semilla germinando, raíces, milpa y sol naciente"
+      ></video>
 
-      <!-- Escenario Central Limpio para el Video Cuadrado (720×720) sin recortes ni barras negras -->
+      <!-- CTA Flotante sobre la base del Hero -->
       <div class="container hero-video-stage-wrap">
-        <div class="hero-video-frame" data-parallax="-0.08" data-parallax-scale="1" data-parallax-mouse="0.45">
-          <video
-            id="hero-brand-video"
-            class="hero-brand-video"
-            src="assets/video/hero-eco-aldea.mp4"
-            autoplay
-            loop
-            muted
-            playsinline
-            preload="auto"
-            aria-label="Video animado oficial de Eco Aldea Juárez NL con semilla germinando, raíces, milpa y sol naciente"
-          ></video>
-        </div>
-
-        <!-- CTA Flotante sobre la base del Hero -->
         <div class="hero-floating-cta-dock" role="region" aria-label="Acciones rápidas de participación">
           <a href="https://wa.me/528117164618?text=Hola%2C%20conoc%C3%AD%20Eco%20Aldea%20Ju%C3%A1rez%20NL%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20el%20proyecto%20y%20c%C3%B3mo%20puedo%20participar."
             class="btn btn--primary hero-floating-cta-btn" data-whatsapp-cta target="_blank" rel="noopener noreferrer">
@@ -204,6 +193,12 @@
          =================================================================== -->
     <section id="manifiesto" class="hero-lowered-manifesto section-padding" data-parallax-scene
       aria-label="Manifiesto principal de Eco Aldea Juárez NL">
+      <div class="parallax-section-bg" aria-hidden="true">
+        <img src="assets/images/parallax/parallax-bosque-nl.jpg"
+          alt="Vista panorámica al atardecer de un huerto comunitario agroecológico con camas de cultivo en madera y las montañas de Nuevo León al fondo"
+          class="parallax-bg-img" data-parallax="0.38" data-parallax-scale="1.24" loading="lazy" />
+        <div class="parallax-bg-overlay"></div>
+      </div>
       <div class="container hero-grid">
         <div class="hero-content" data-reveal>
           <div class="hero-badge-pill">
