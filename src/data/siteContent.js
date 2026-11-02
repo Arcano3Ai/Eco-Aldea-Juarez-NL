@@ -530,6 +530,41 @@ export const SITE_CONTENT = {
     ]
   },
 
+  courses: {
+    eyebrow: 'ZONA DE CURSOS Y TALLERES COMUNITARIOS',
+    title: 'Aprender haciendo: saberes vivos para la tierra y la vida en común.',
+    items: [
+      {
+        id: 'curso-semillas-criollas',
+        category: 'semillas',
+        title: 'Guardado, Selección y Resguardo de Semillas Criollas',
+        duration: 'Jornada práctica · 3 h',
+        src: 'assets/images/cursos/curso-1-guardianes-semillas.jpg'
+      },
+      {
+        id: 'curso-composta-suelo',
+        category: 'suelo',
+        title: 'Compostaje Orgánico y Regeneración de Suelo Vivo',
+        duration: 'Jornada práctica · 3.5 h',
+        src: 'assets/images/cursos/curso-2-composta-suelo-vivo.jpg'
+      },
+      {
+        id: 'curso-huertos-milpa',
+        category: 'semillas',
+        title: 'Diseño de Huertos Comunitarios y Policultivo (Sistema Milpa)',
+        duration: 'Jornada práctica · 4 h',
+        src: 'assets/images/cursos/curso-3-huertos-agroecologicos.jpg'
+      },
+      {
+        id: 'curso-madera-reutilizada',
+        category: 'oficios',
+        title: 'Aprovechamiento de Madera Reutilizada para el Huerto',
+        duration: 'Construcción colectiva · 4 h',
+        src: 'assets/images/cursos/curso-4-oficios-madera-tierra.jpg'
+      }
+    ]
+  },
+
   faq: {
     eyebrow: 'PREGUNTAS FRECUENTES · GUÍA DE PARTICIPACIÓN',
     title: 'Todo lo que necesitas saber para sumarte',

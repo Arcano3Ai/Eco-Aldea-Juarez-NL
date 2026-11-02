@@ -1656,6 +1656,247 @@ ul {
 }
 
 /* ==========================================================================
+   6.B2 SECCIÓN — ZONA DE CURSOS Y TALLERES COMUNITARIOS
+   ========================================================================== */
+.courses-section {
+  background-color: var(--warm-white);
+  background-image:
+    linear-gradient(180deg, rgba(249, 246, 238, 0.94) 0%, rgba(239, 232, 213, 0.96) 100%),
+    url('../../assets/images/brand/patron-ciclo-tierra.jpg');
+  background-size: cover, 520px auto;
+  position: relative;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.65rem;
+}
+
+.course-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(92, 64, 36, 0.18);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.course-card.is-hidden {
+  display: none;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-elevated);
+  border-color: var(--earth-terracotta);
+}
+
+.course-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--forest-brand);
+}
+
+.course-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 650ms var(--ease-out-expo);
+}
+
+.course-card:hover .course-card-media img {
+  transform: scale(1.05);
+}
+
+.course-level-badge {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  z-index: 2;
+  background: rgba(38, 74, 49, 0.9);
+  color: var(--sun-glow);
+  backdrop-filter: blur(6px);
+  padding: 0.32rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(232, 168, 56, 0.42);
+}
+
+.course-card-body {
+  padding: 1.55rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.course-meta-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.course-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--earth-terracotta);
+  background: var(--terracotta-soft);
+  padding: 0.25rem 0.7rem;
+  border-radius: var(--radius-pill);
+}
+
+.course-duration {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--forest-brand);
+}
+
+.course-title {
+  font-family: var(--font-display);
+  font-size: 1.38rem;
+  line-height: 1.24;
+  color: var(--forest-brand);
+}
+
+.course-summary {
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+  line-height: 1.62;
+}
+
+.course-syllabus-box {
+  background: var(--warm-white);
+  border: 1px solid rgba(92, 64, 36, 0.16);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.course-syllabus-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--forest-brand);
+  text-align: left;
+}
+
+.course-syllabus-chevron {
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 50%;
+  background: rgba(184, 107, 75, 0.16);
+  color: var(--earth-terracotta);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: transform 240ms ease, background-color 240ms ease;
+}
+
+.course-syllabus-toggle.is-open .course-syllabus-chevron {
+  transform: rotate(45deg);
+  background: var(--earth-terracotta);
+  color: #ffffff;
+}
+
+.course-syllabus-list {
+  padding: 0 1rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-top: 1px dashed rgba(92, 64, 36, 0.15);
+  padding-top: 0.75rem;
+}
+
+.course-syllabus-list li strong {
+  color: var(--forest-brand);
+}
+
+.course-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(92, 64, 36, 0.14);
+}
+
+.course-modality {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--soil-brown);
+}
+
+.course-wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--forest-brand);
+}
+
+.course-wa-link:hover {
+  color: var(--earth-terracotta);
+}
+
+.courses-propose-banner {
+  margin-top: 2.75rem;
+  background-color: var(--forest-brand);
+  background-image:
+    linear-gradient(135deg, rgba(29, 58, 38, 0.93) 0%, rgba(38, 74, 49, 0.9) 100%),
+    url('../../assets/images/brand/patron-milpa.jpg');
+  background-size: cover, 460px auto;
+  color: var(--warm-white);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  border: 1.5px solid rgba(232, 168, 56, 0.4);
+  box-shadow: var(--shadow-elevated);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.courses-propose-copy h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2.6vw, 2rem);
+  color: var(--warm-white);
+  margin-bottom: 0.5rem;
+}
+
+.courses-propose-copy p {
+  color: var(--text-on-dark-muted);
+  max-width: 62ch;
+  font-size: 0.96rem;
+}
+
+/* ==========================================================================
    6.C SECCIÓN — BLOG Y BITÁCORA DE SABERES ABIERTOS + MODAL LECTOR
    ========================================================================== */
 .blog-section {
@@ -2458,6 +2699,15 @@ ul {
 
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .courses-propose-banner {
+    flex-direction: row;
+    align-items: center;
   }
 
   .floating-whatsapp-label {

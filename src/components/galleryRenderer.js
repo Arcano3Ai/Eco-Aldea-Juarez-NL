@@ -240,4 +240,42 @@ export function initGalleryAndInteractiveModules() {
       }
     });
   });
+
+  // 6. Zona de Cursos y Talleres Comunitarios: Filtro de Categorías + Temarios Desplegables
+  const courseFilterBtns = Array.from(document.querySelectorAll('[data-course-filter]'));
+  const courseCards = Array.from(document.querySelectorAll('[data-course-card]'));
+
+  if (courseFilterBtns.length > 0 && courseCards.length > 0) {
+    courseFilterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cat = btn.getAttribute('data-course-filter') || 'all';
+        courseFilterBtns.forEach((b) => {
+          const active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', String(active));
+        });
+
+        courseCards.forEach((card) => {
+          const cardCat = card.getAttribute('data-course-category') || '';
+          const visible = cat === 'all' || cardCat === cat;
+          card.classList.toggle('is-hidden', !visible);
+        });
+      });
+    });
+  }
+
+  const syllabusToggles = Array.from(document.querySelectorAll('[data-course-syllabus-toggle]'));
+  syllabusToggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const listId = btn.getAttribute('aria-controls');
+      const listEl = listId ? document.getElementById(listId) : null;
+
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.classList.toggle('is-open', !expanded);
+      if (listEl) {
+        listEl.hidden = expanded;
+      }
+    });
+  });
 }

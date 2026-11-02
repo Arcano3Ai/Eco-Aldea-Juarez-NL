@@ -86,10 +86,12 @@ test('1. Configuración editable local (src/data/siteContent.js) e integridad de
     'Iniciativa de apoyo digital por ARCANO SOLUTIONS.'
   );
 
-  // Zona de Niños y Blog
+  // Zona de Niños, Zona de Cursos y Blog
   assert.ok(SITE_CONTENT.kidsZone, 'Debe incluir la configuración de Zona de Niños');
   assert.equal(SITE_CONTENT.kidsZone.activities.length, 4);
   assert.equal(SITE_CONTENT.kidsZone.quiz.length, 3);
+  assert.ok(SITE_CONTENT.courses, 'Debe incluir la configuración de Zona de Cursos y Talleres');
+  assert.equal(SITE_CONTENT.courses.items.length, 4);
   assert.ok(SITE_CONTENT.blog, 'Debe incluir la configuración de Blog y Saberes');
   assert.equal(SITE_CONTENT.blog.articles.length, 4);
   assert.ok(SITE_CONTENT.faq, 'Debe incluir la sección de Preguntas Frecuentes');
