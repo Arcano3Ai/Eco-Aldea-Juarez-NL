@@ -1768,8 +1768,32 @@
   </div>
 
   <!-- =====================================================================
-       11. BOTÓN FLOTANTE DE WHATSAPP (PLANTA VIVA) Y BARRA RÁPIDA MÓVIL
+       11. REPRODUCTOR DE MÚSICA AMBIENTAL AUTOMÁTICA Y BOTÓN PLANTA WHATSAPP
        ===================================================================== -->
+  <audio
+    id="bg-music-audio"
+    src="assets/audio/eco-ecoaldea.mp3"
+    autoplay
+    loop
+    preload="auto"
+  ></audio>
+
+  <button
+    id="bg-music-toggle"
+    type="button"
+    class="floating-audio-btn"
+    aria-pressed="true"
+    aria-label="Pausar o reproducir música de fondo: Eco, ecoaldea"
+  >
+    <span class="audio-eq-bars" aria-hidden="true">
+      <span class="audio-eq-bar"></span>
+      <span class="audio-eq-bar"></span>
+      <span class="audio-eq-bar"></span>
+      <span class="audio-eq-bar"></span>
+    </span>
+    <span id="bg-music-label" class="floating-audio-label">Eco, ecoaldea</span>
+  </button>
+
   <a href="https://wa.me/528117164618?text=Hola%2C%20conoc%C3%AD%20Eco%20Aldea%20Ju%C3%A1rez%20NL%20a%20trav%C3%A9s%20de%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20conocer%20m%C3%A1s%20sobre%20el%20proyecto%20y%20c%C3%B3mo%20puedo%20participar."
     class="floating-whatsapp" data-whatsapp-cta target="_blank" rel="noopener noreferrer"
     aria-label="Contactar a Eco Aldea Juárez NL por WhatsApp">

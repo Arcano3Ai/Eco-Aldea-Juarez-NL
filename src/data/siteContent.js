@@ -28,7 +28,8 @@ export const SITE_CONTENT = {
       'assets/images/brand/patron-milpa.jpg',
       'assets/images/brand/patron-ciclo-tierra.jpg',
       'assets/images/brand/patron-destellos-naturales.jpg'
-    ]
+    ],
+    backgroundAudio: 'assets/audio/eco-ecoaldea.mp3'
   },
 
   whatsapp: {

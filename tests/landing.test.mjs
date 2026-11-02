@@ -190,9 +190,14 @@ test('4. HTML Semántico, SEO, Open Graph, Accesibilidad y Ausencia de Backend/F
     seenSrcs.set(src, true);
   }
 
-  // Lightbox y botón flotante de WhatsApp
+  // Lightbox, música ambiental autoplay y botón flotante de WhatsApp
   assert.match(html, /id="lightbox-modal"/);
   assert.match(html, /role="dialog"/);
+  assert.match(html, /id="bg-music-audio"[^>]*src="assets\/audio\/eco-ecoaldea\.mp3"[^>]*autoplay/i);
+  assert.ok(
+    fs.existsSync(path.resolve(ROOT, 'assets/audio/eco-ecoaldea.mp3')),
+    'El archivo de música oficial assets/audio/eco-ecoaldea.mp3 debe existir en disco'
+  );
   assert.match(html, /class="[^"]*floating-whatsapp[^"]*"/);
   assert.ok(html.includes('https://wa.me/528117164618'));
 

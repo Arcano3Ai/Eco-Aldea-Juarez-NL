@@ -2566,6 +2566,86 @@ ul {
   letter-spacing: 0.03em;
 }
 
+/* Controlador Flotante de Música Ambiental ("Eco, ecoaldea") */
+.floating-audio-btn {
+  position: fixed;
+  bottom: 5.1rem;
+  left: 1rem;
+  z-index: 950;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(29, 58, 38, 0.92);
+  color: var(--warm-white);
+  padding: 0.6rem 0.95rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(232, 168, 56, 0.55);
+  backdrop-filter: blur(10px);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.34);
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    background-color var(--transition-base);
+}
+
+.floating-audio-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--sun-amber);
+  background: var(--forest-brand);
+}
+
+.audio-eq-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 0.95rem;
+}
+
+.audio-eq-bar {
+  width: 3px;
+  height: 35%;
+  background: var(--sun-amber);
+  border-radius: 2px;
+  transition: height 200ms ease;
+}
+
+.floating-audio-btn.is-playing .audio-eq-bar:nth-child(1) {
+  animation: eqPulse 0.85s ease-in-out infinite;
+}
+
+.floating-audio-btn.is-playing .audio-eq-bar:nth-child(2) {
+  animation: eqPulse 0.65s ease-in-out 0.15s infinite;
+}
+
+.floating-audio-btn.is-playing .audio-eq-bar:nth-child(3) {
+  animation: eqPulse 0.95s ease-in-out 0.3s infinite;
+}
+
+.floating-audio-btn.is-playing .audio-eq-bar:nth-child(4) {
+  animation: eqPulse 0.75s ease-in-out 0.1s infinite;
+}
+
+@keyframes eqPulse {
+  0%,
+  100% {
+    height: 30%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+
+.floating-audio-label {
+  max-width: 11rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--sun-glow);
+}
+
 /* Barra inferior ergonómica exclusiva para teléfonos móviles (<640px) */
 .mobile-bottom-dock {
   position: fixed;
@@ -2658,6 +2738,11 @@ ul {
   .floating-whatsapp {
     bottom: 1.25rem;
     right: 1.25rem;
+  }
+
+  .floating-audio-btn {
+    bottom: 1.4rem;
+    left: 1.25rem;
   }
 
   .hero-actions {

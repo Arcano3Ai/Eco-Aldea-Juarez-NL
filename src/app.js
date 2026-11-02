@@ -9,6 +9,7 @@ import { initNavigation } from './components/navigation.js';
 import { initLightbox } from './components/lightbox.js';
 import { initGalleryAndInteractiveModules } from './components/galleryRenderer.js';
 import { initAnimations } from './components/animations.js';
+import { initBackgroundMusic } from './components/audioPlayer.js';
 
 function syncWhatsAppLinks() {
   const officialUrl = buildWhatsAppUrl();
@@ -27,6 +28,7 @@ function bootstrap() {
   initGalleryAndInteractiveModules();
   initLightbox();
   initAnimations();
+  initBackgroundMusic();
 }
 
 if (document.readyState === 'loading') {
