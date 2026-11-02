@@ -2246,7 +2246,18 @@ ul {
   color: var(--text-on-dark-muted);
 }
 
-/* Botón Flotante de WhatsApp */
+/* Botón Flotante de WhatsApp — Planta Germinando Oficial */
+.wa-plant-svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  flex-shrink: 0;
+  transition: transform 360ms var(--ease-out-expo);
+}
+
+.btn:hover .wa-plant-svg {
+  transform: scale(1.18) rotate(-8deg);
+}
+
 .floating-whatsapp {
   position: fixed;
   bottom: 4.85rem;
@@ -2254,30 +2265,64 @@ ul {
   z-index: 950;
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  background: var(--whatsapp-green);
-  color: #082011;
-  padding: 0.85rem 1.15rem;
+  gap: 0.65rem;
+  background: linear-gradient(135deg, var(--forest-brand) 0%, #1d3c28 100%);
+  color: var(--warm-white);
+  padding: 0.35rem;
   border-radius: var(--radius-pill);
+  border: 2px solid var(--sun-amber);
   font-weight: 700;
-  font-size: 0.86rem;
-  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.42);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  font-size: 0.84rem;
+  box-shadow:
+    0 12px 28px rgba(29, 58, 38, 0.48),
+    0 0 0 4px rgba(37, 211, 102, 0.22);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.floating-wa-plant-badge {
+  width: 3.35rem;
+  height: 3.35rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: plantSway 3.4s ease-in-out infinite;
+}
+
+.floating-wa-plant-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+@keyframes plantSway {
+  0%,
+  100% {
+    transform: rotate(-3deg) scale(1);
+  }
+  50% {
+    transform: rotate(4deg) scale(1.05);
+  }
 }
 
 .floating-whatsapp:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.58);
-}
-
-.floating-whatsapp svg {
-  width: 1.45rem;
-  height: 1.45rem;
-  flex-shrink: 0;
+  transform: translateY(-4px) scale(1.04);
+  border-color: var(--whatsapp-green);
+  box-shadow:
+    0 16px 34px rgba(29, 58, 38, 0.6),
+    0 0 0 6px rgba(37, 211, 102, 0.35);
 }
 
 .floating-whatsapp-label {
   display: none;
+  padding-right: 0.95rem;
+  color: var(--sun-glow);
+  letter-spacing: 0.03em;
 }
 
 /* Barra inferior ergonómica exclusiva para teléfonos móviles (<640px) */
