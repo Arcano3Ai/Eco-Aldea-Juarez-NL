@@ -106,9 +106,16 @@ test('2. Generador de enlaces WhatsApp (src/utils/whatsapp.js)', async () => {
   );
 });
 
-test('3. Existencia física de todas las fotografías locales referenciadas', async () => {
+test('3. Existencia física de todas las fotografías locales y activos de Identidad de Marca', async () => {
   const { SITE_CONTENT } = await import('../src/data/siteContent.js');
   const imagePaths = [
+    SITE_CONTENT.brand.primaryLogo,
+    SITE_CONTENT.brand.darkModeLogo,
+    SITE_CONTENT.brand.stampLogo,
+    SITE_CONTENT.brand.secondarySeedIcon,
+    SITE_CONTENT.brand.favicon,
+    ...SITE_CONTENT.brand.pillarIcons,
+    ...SITE_CONTENT.brand.patterns,
     SITE_CONTENT.hero.backgroundImage,
     ...SITE_CONTENT.hero.parallaxBackgrounds,
     SITE_CONTENT.philosophy.mainImage,
@@ -117,6 +124,9 @@ test('3. Existencia física de todas las fotografías locales referenciadas', as
     ...SITE_CONTENT.activities.items.map((i) => i.src),
     ...SITE_CONTENT.historyGallery.items.map((i) => i.src)
   ];
+
+  assert.equal(SITE_CONTENT.brand.pillarIcons.length, 6, 'Debe incluir los 6 medallones oficiales de pilares');
+  assert.equal(SITE_CONTENT.brand.patterns.length, 3, 'Debe incluir los 3 patrones oficiales de marca');
 
   assert.equal(SITE_CONTENT.hero.parallaxBackgrounds.length, 3, 'Debe incluir las 3 imágenes de fondo parallax');
   for (const pBg of SITE_CONTENT.hero.parallaxBackgrounds) {
@@ -194,14 +204,18 @@ test('5. Sistema de Diseño CSS Mobile-First y Paleta Orgánica', () => {
   assert.ok(fs.existsSync(cssPath), 'src/styles/main.css debe existir');
   const css = fs.readFileSync(cssPath, 'utf8');
 
-  // Variables de paleta cromática requerida
+  // Variables de paleta cromática oficial Brand Style Guide v1.0
   assert.match(css, /--forest-deep:/);
+  assert.match(css, /--forest-brand:\s*#264A31/i);
+  assert.match(css, /--earth-terracotta:\s*#B86B4B/i);
+  assert.match(css, /--sun-amber:\s*#E8A838/i);
+  assert.match(css, /--soil-brown:\s*#5C4024/i);
+  assert.match(css, /--warm-white:\s*#F9F6EE/i);
   assert.match(css, /--olive-earth:/);
   assert.match(css, /--sage-soft:/);
   assert.match(css, /--sand-beige:/);
-  assert.match(css, /--warm-white:/);
   assert.match(css, /--earth-clay:/);
-  assert.match(css, /--sun-amber:/);
+  assert.match(css, /Montserrat/);
 
   // Prevención de overflow horizontal y soporte de movimiento reducido
   assert.match(css, /overflow-x:\s*hidden/);
@@ -223,19 +237,23 @@ test('6. Verificación E2E de servidor estático y carga HTTP 200 de todos los r
 
     const resCss = await fetch(`${baseUrl}/src/styles/main.css`);
     assert.equal(resCss.status, 200);
+    await resCss.text();
 
     const resJs = await fetch(`${baseUrl}/src/app.js`);
     assert.equal(resJs.status, 200);
+    await resJs.text();
 
     // Extraer todos los atributos src="assets/..." del HTML y verificar respuesta 200
     const srcMatches = [...html.matchAll(/src="(assets\/[^"]+)"/g)].map((m) => m[1]);
-    assert.ok(srcMatches.length >= 10);
+    assert.ok(srcMatches.length >= 25);
 
     for (const assetPath of srcMatches) {
       const resAsset = await fetch(`${baseUrl}/${assetPath}`);
       assert.equal(resAsset.status, 200, `Recurso debe responder 200 OK: ${assetPath}`);
+      await resAsset.arrayBuffer();
     }
   } finally {
+    server.closeAllConnections?.();
     await new Promise((resolve) => server.close(resolve));
   }
 });

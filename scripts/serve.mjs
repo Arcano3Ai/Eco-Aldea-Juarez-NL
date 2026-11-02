@@ -51,7 +51,8 @@ export function createStaticServer() {
       const contentType = MIME_TYPES[ext] || 'application/octet-stream';
       res.writeHead(200, {
         'Content-Type': contentType,
-        'Cache-Control': 'no-cache'
+        'Cache-Control': 'no-cache',
+        Connection: 'close'
       });
       fs.createReadStream(filePath).pipe(res);
     });

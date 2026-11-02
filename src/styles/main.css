@@ -4,35 +4,44 @@
    ========================================================================== */
 
 :root {
-  /* Paleta Cromática Oficial */
-  --forest-deep: #12271c;
-  --forest-rich: #1b3828;
-  --forest-mid: #254b36;
-  --olive-earth: #485c3d;
-  --olive-dark: #36472d;
-  --sage-soft: #8ea480;
+  /* Paleta Cromática Oficial — Brand Style Guide v1.0 (ECO ALDEA JUÁREZ, NL) */
+  --forest-deep: #1d3a26;
+  --forest-brand: #264A31;
+  /* Forest Green Oficial COD060 / #264A31 */
+  --forest-rich: #264A31;
+  --forest-mid: #2f593b;
+  --olive-earth: #3b5e3f;
+  --olive-dark: #264A31;
+  --sage-soft: #859f78;
   --sage-mist: #dfe8d9;
-  --sage-pale: #eff3ec;
-  --sand-beige: #ece4d3;
-  --sand-deep: #dfd3bc;
-  --warm-white: #fbf9f4;
-  --earth-clay: #7d5636;
-  --wood-warm: #583c25;
-  --sun-amber: #e9c46a;
-  --sun-glow: #f5d98e;
+  --sage-pale: #f3eee1;
+  --sand-beige: #efe8d5;
+  --sand-deep: #e2d7bd;
+  --warm-white: #F9F6EE;
+  /* Warm Ivory Oficial CODACC / #F9F6EE */
+  --earth-terracotta: #B86B4B;
+  /* Earthy Terracotta Oficial COD023 / #B86B4B */
+  --terracotta-soft: rgba(184, 107, 75, 0.14);
+  --soil-brown: #5C4024;
+  /* Soil Brown Oficial COD044 / #5C4024 */
+  --earth-clay: #5C4024;
+  --wood-warm: #5C4024;
+  --sun-amber: #E8A838;
+  /* Solar Amber Oficial CODU35 / #E8A838 */
+  --sun-glow: #f2be5c;
   --whatsapp-green: #25d366;
   --whatsapp-dark: #1da851;
 
   /* Textos y Contrastes Accesibles (WCAG AA/AAA) */
-  --text-primary: #16241b;
-  --text-secondary: #3d4f42;
-  --text-muted: #5d6e61;
-  --text-on-dark: #f9f6ef;
-  --text-on-dark-muted: #d2ddd4;
+  --text-primary: #1a2d20;
+  --text-secondary: #3c4e41;
+  --text-muted: #5c4024;
+  --text-on-dark: #F9F6EE;
+  --text-on-dark-muted: #d8e2d9;
 
-  /* Tipografía Editorial */
-  --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Tipografía Oficial Brand Style Guide v1.0: Display Serif + Body Copy (Montserrat) */
+  --font-display: 'Cormorant Garamond', 'Fraunces', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Bordes, Sombras y Transiciones */
   --radius-sm: 0.625rem;
@@ -172,11 +181,11 @@ ul {
 .eyebrow::before {
   content: '';
   display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.55rem;
+  height: 0.55rem;
   border-radius: 50%;
-  background-color: var(--sun-amber);
-  box-shadow: 0 0 0 3px rgba(233, 196, 106, 0.28);
+  background-color: var(--earth-terracotta);
+  box-shadow: 0 0 0 3px rgba(184, 107, 75, 0.26);
 }
 
 .eyebrow--light {
@@ -333,17 +342,28 @@ ul {
 }
 
 .brand-emblem {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3.1rem;
+  height: 3.1rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--olive-earth), var(--forest-deep));
-  border: 1.5px solid var(--sun-amber);
+  background: var(--warm-white);
+  padding: 2px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--sun-amber);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.32);
   flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.brand-logo:hover .brand-emblem {
+  transform: scale(1.06);
+}
+
+.brand-seal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 .brand-text {
@@ -554,12 +574,10 @@ ul {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       rgba(12, 28, 19, 0.72) 0%,
       rgba(18, 39, 28, 0.42) 48%,
-      rgba(12, 28, 19, 0.84) 100%
-    ),
+      rgba(12, 28, 19, 0.84) 100%),
     radial-gradient(circle at 75% 25%, rgba(233, 196, 106, 0.22), transparent 55%);
 }
 
@@ -753,11 +771,13 @@ ul {
 }
 
 @keyframes scrollBounce {
+
   0%,
   100% {
     transform: translateY(0);
     opacity: 1;
   }
+
   60% {
     transform: translateY(9px);
     opacity: 0.25;
@@ -835,30 +855,36 @@ ul {
 
 .philosophy-botanical-seal {
   position: absolute;
-  top: -1rem;
-  right: 0.5rem;
-  width: 5.5rem;
-  height: 5.5rem;
+  top: -1.25rem;
+  right: 0.35rem;
+  width: 6.25rem;
+  height: 6.25rem;
   border-radius: 50%;
-  background: var(--forest-deep);
-  color: var(--sun-amber);
+  background: var(--warm-white);
+  padding: 0.55rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-soft);
-  border: 2px solid var(--sun-amber);
+  box-shadow: var(--shadow-elevated);
+  border: 2px solid var(--earth-terracotta);
   z-index: 3;
+}
+
+.secondary-seed-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .philosophy-copy blockquote {
   margin-top: 1.5rem;
   padding: 1.15rem 1.35rem;
-  border-left: 3px solid var(--olive-earth);
-  background: rgba(255, 255, 255, 0.66);
+  border-left: 4px solid var(--earth-terracotta);
+  background: rgba(255, 255, 255, 0.76);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 1.12rem;
+  font-size: 1.18rem;
   color: var(--forest-rich);
 }
 
@@ -903,15 +929,20 @@ ul {
   color: var(--text-secondary);
 }
 
-/* Módulo Interactivo: Ciclo Vivo de Conservación de Semillas */
+/* Módulo Interactivo: Ciclo Vivo de Conservación de Semillas (con Patrón Milpa Oficial) */
 .seed-cycle-box {
   margin-top: 3.5rem;
-  background: var(--forest-deep);
+  background-color: var(--forest-brand);
+  background-image:
+    linear-gradient(135deg, rgba(29, 58, 38, 0.93) 0%, rgba(38, 74, 49, 0.9) 100%),
+    url('../../assets/images/brand/patron-milpa.jpg');
+  background-size: cover, 460px auto;
+  background-position: center, center bottom;
   color: var(--text-on-dark);
   border-radius: var(--radius-lg);
   padding: clamp(1.5rem, 4vw, 2.75rem);
   box-shadow: var(--shadow-elevated);
-  border: 1px solid rgba(233, 196, 106, 0.22);
+  border: 1.5px solid rgba(232, 168, 56, 0.34);
 }
 
 .seed-cycle-header {
@@ -982,10 +1013,14 @@ ul {
 }
 
 /* ==========================================================================
-   4. SECCIÓN — LO QUE ESTAMOS CONSTRUYENDO (6 Áreas de Interés)
+   4. SECCIÓN — LO QUE ESTAMOS CONSTRUYENDO (6 Áreas con Medallones Oficiales)
    ========================================================================== */
 .areas-section {
   background-color: var(--warm-white);
+  background-image:
+    linear-gradient(180deg, rgba(249, 246, 238, 0.95) 0%, rgba(249, 246, 238, 0.97) 100%),
+    url('../../assets/images/brand/patron-destellos-naturales.jpg');
+  background-size: cover, 520px auto;
   position: relative;
 }
 
@@ -1007,8 +1042,8 @@ ul {
 }
 
 .area-card {
-  background: linear-gradient(180deg, #ffffff 0%, var(--sage-pale) 100%);
-  border: 1px solid rgba(72, 92, 61, 0.18);
+  background: linear-gradient(180deg, #ffffff 0%, var(--warm-white) 100%);
+  border: 1px solid rgba(92, 64, 36, 0.18);
   border-radius: var(--radius-lg);
   padding: 2rem 1.65rem;
   display: flex;
@@ -1031,7 +1066,7 @@ ul {
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--olive-earth), var(--sun-amber));
+  background: linear-gradient(90deg, var(--forest-brand), var(--earth-terracotta), var(--sun-amber));
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition-base);
@@ -1040,7 +1075,7 @@ ul {
 .area-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-elevated);
-  border-color: var(--olive-earth);
+  border-color: var(--earth-terracotta);
 }
 
 .area-card:hover::before {
@@ -1051,57 +1086,67 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 0.65rem;
 }
 
 .area-icon-box {
-  width: 3.25rem;
-  height: 3.25rem;
-  border-radius: var(--radius-md);
-  background: var(--forest-deep);
-  color: var(--sun-amber);
+  width: 4.85rem;
+  height: 4.85rem;
+  border-radius: 50%;
+  background: var(--warm-white);
+  padding: 2px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform var(--transition-base), background-color var(--transition-base);
+  box-shadow: 0 8px 20px rgba(38, 74, 49, 0.15);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  flex-shrink: 0;
+}
+
+.area-medallion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 .area-card:hover .area-icon-box {
-  transform: scale(1.08) rotate(-4deg);
-  background: var(--olive-earth);
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 12px 26px rgba(184, 107, 75, 0.26);
 }
 
 .area-number {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: rgba(72, 92, 61, 0.35);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: rgba(184, 107, 75, 0.42);
 }
 
 .area-title {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.32rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: var(--forest-deep);
+  color: var(--forest-brand);
   margin-bottom: 0.55rem;
 }
 
 .area-description {
-  font-size: 0.96rem;
+  font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.62;
 }
 
 .area-tag {
   display: inline-flex;
   align-self: flex-start;
-  font-size: 0.74rem;
+  font-size: 0.73rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--earth-clay);
-  background: rgba(125, 86, 54, 0.1);
-  padding: 0.3rem 0.75rem;
+  color: var(--earth-terracotta);
+  background: var(--terracotta-soft);
+  padding: 0.32rem 0.8rem;
   border-radius: var(--radius-pill);
 }
 
@@ -1283,12 +1328,10 @@ ul {
 .parallax-bg-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(12, 28, 19, 0.78) 0%,
-    rgba(18, 39, 28, 0.44) 50%,
-    rgba(12, 28, 19, 0.82) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(12, 28, 19, 0.78) 0%,
+      rgba(18, 39, 28, 0.44) 50%,
+      rgba(12, 28, 19, 0.82) 100%);
 }
 
 /* Ventana Inmersiva Parallax de Pantalla Completa */
@@ -1394,10 +1437,14 @@ ul {
 }
 
 /* ==========================================================================
-   6.B SECCIÓN — ZONA DE NIÑOS Y FAMILIAS (GUARDIANES DE LA TIERRA + QUIZ)
+   6.B SECCIÓN — ZONA DE NIÑOS Y FAMILIAS (GUARDIANES DE LA TIERRA + PATRÓN DESTELLOS)
    ========================================================================== */
 .kids-section {
-  background: linear-gradient(180deg, var(--warm-white) 0%, #f4efe1 100%);
+  background-color: var(--warm-white);
+  background-image:
+    linear-gradient(180deg, rgba(249, 246, 238, 0.93) 0%, rgba(244, 239, 225, 0.95) 100%),
+    url('../../assets/images/brand/patron-destellos-naturales.jpg');
+  background-size: cover, 480px auto;
   position: relative;
   overflow: hidden;
 }
@@ -1774,10 +1821,14 @@ ul {
 }
 
 /* ==========================================================================
-   6.D SECCIÓN — PREGUNTAS FRECUENTES (FAQ ACORDEÓN)
+   6.D SECCIÓN — PREGUNTAS FRECUENTES (FAQ ACORDEÓN + PATRÓN CICLO DE LA TIERRA)
    ========================================================================== */
 .faq-section {
-  background: var(--sage-pale);
+  background-color: var(--sage-pale);
+  background-image:
+    linear-gradient(180deg, rgba(243, 238, 225, 0.94) 0%, rgba(239, 232, 213, 0.95) 100%),
+    url('../../assets/images/brand/patron-ciclo-tierra.jpg');
+  background-size: cover, 520px auto;
 }
 
 .faq-list {
@@ -1834,6 +1885,7 @@ ul {
   font-size: 0.96rem;
   line-height: 1.65;
 }
+
 .history-section {
   background: var(--warm-white);
 }
@@ -1868,11 +1920,9 @@ ul {
 .mosaic-caption-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(18, 39, 28, 0.05) 35%,
-    rgba(18, 39, 28, 0.88) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(18, 39, 28, 0.05) 35%,
+      rgba(18, 39, 28, 0.88) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1932,6 +1982,20 @@ ul {
   box-shadow: var(--shadow-elevated);
 }
 
+.join-brand-seal-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.join-stamp-logo {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
 .join-card .section-lead {
   color: var(--text-on-dark-muted);
   margin-inline: auto;
@@ -1966,14 +2030,18 @@ ul {
 }
 
 /* ==========================================================================
-   9. FOOTER INSTITUCIONAL + CRÉDITOS ARCANO SOLUTIONS
+   9. FOOTER INSTITUCIONAL + SELLO MODO OSCURO (#264A31) + PATRÓN MILPA
    ========================================================================== */
 .site-footer {
-  background-color: #0c1b13;
+  background-color: #162d1e;
+  background-image:
+    linear-gradient(180deg, rgba(22, 45, 30, 0.95) 0%, rgba(14, 30, 20, 0.97) 100%),
+    url('../../assets/images/brand/patron-milpa.jpg');
+  background-size: cover, 480px auto;
   color: var(--text-on-dark-muted);
   padding-top: 4rem;
   padding-bottom: 2.5rem;
-  border-top: 1px solid rgba(233, 196, 106, 0.15);
+  border-top: 2px solid rgba(184, 107, 75, 0.38);
 }
 
 .footer-grid {
@@ -1984,11 +2052,26 @@ ul {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.footer-seal-logo {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
 .footer-brand h2 {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   color: var(--warm-white);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
 .footer-tagline {
@@ -2338,6 +2421,7 @@ ul {
 }
 
 @media (min-width: 1024px) {
+
   .mobile-menu-toggle,
   .mobile-nav-drawer,
   .mobile-nav-backdrop {

@@ -9,7 +9,26 @@ export const SITE_CONTENT = {
     name: 'ECO ALDEA JUÁREZ NL',
     shortName: 'Eco Aldea Juárez NL',
     region: 'Juárez, Nuevo León, México',
-    communityGroup: 'Comunidad Ecológica y Participativa · Nuevo León'
+    communityGroup: 'Comunidad Ecológica y Participativa · Nuevo León',
+    styleGuideVersion: '1.0',
+    primaryLogo: 'assets/images/brand/logo-oficial.png',
+    darkModeLogo: 'assets/images/brand/logo-dark-mode.png',
+    stampLogo: 'assets/images/brand/logo-sello-tierra.png',
+    secondarySeedIcon: 'assets/images/brand/icono-semilla-secundario.png',
+    favicon: 'assets/images/brand/favicon.png',
+    pillarIcons: [
+      'assets/images/brand/pilar-01-cultura-tierra.png',
+      'assets/images/brand/pilar-02-conservacion-semillas.png',
+      'assets/images/brand/pilar-03-comunidad.png',
+      'assets/images/brand/pilar-04-aprendizaje-ecologico.png',
+      'assets/images/brand/pilar-05-convivencia-natural.png',
+      'assets/images/brand/pilar-06-guardianes-tierra.png'
+    ],
+    patterns: [
+      'assets/images/brand/patron-milpa.jpg',
+      'assets/images/brand/patron-ciclo-tierra.jpg',
+      'assets/images/brand/patron-destellos-naturales.jpg'
+    ]
   },
 
   whatsapp: {
