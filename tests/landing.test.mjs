@@ -161,11 +161,21 @@ test('4. HTML Semántico, SEO, Open Graph, Accesibilidad y Ausencia de Backend/F
   assert.ok(html.includes('El futuro se cultiva entre todos.'));
   assert.ok(html.includes('Iniciativa de apoyo digital por ARCANO SOLUTIONS.'));
 
-  // Todas las etiquetas <img> deben tener atributo alt no vacío
+  // Todas las etiquetas <img> deben tener atributo alt no vacío y src 100% único (cero imágenes repetidas)
   const imgTags = html.match(/<img\b[^>]*>/gi) || [];
-  assert.ok(imgTags.length >= 10, 'Debe incluir las imágenes del proyecto y galerías');
+  assert.ok(imgTags.length >= 20, 'Debe incluir todas las imágenes únicas del proyecto y galerías');
+  const seenSrcs = new Map();
   for (const tag of imgTags) {
     assert.match(tag, /\balt="[^"]+"/i, `Cada <img> debe tener texto ALT descriptivo: ${tag}`);
+    const srcMatch = tag.match(/\bsrc="([^"]+)"/i);
+    assert.ok(srcMatch, `Cada <img> debe tener atributo src: ${tag}`);
+    const src = srcMatch[1];
+    assert.equal(
+      seenSrcs.has(src),
+      false,
+      `PROHIBIDO REPETIR IMÁGENES: la imagen "${src}" está duplicada en index.html`
+    );
+    seenSrcs.set(src, true);
   }
 
   // Lightbox y botón flotante de WhatsApp

@@ -51,7 +51,7 @@ export const SITE_CONTENT = {
     backgroundAlt:
       'Vista panorámica al atardecer de un huerto comunitario agroecológico con camas de cultivo en madera y las montañas de Nuevo León al fondo',
     featuredRealBadge: {
-      image: 'assets/images/comunidad/cosecha-huerto-comunitario.jpg',
+      image: 'assets/images/comunidad/jornada-huerto-semillas.jpg',
       title: 'Cosecha y guarda de semillas en Nuevo León',
       caption: 'Registro comunitario · Eco Aldea Juárez NL'
     }
@@ -67,9 +67,9 @@ export const SITE_CONTENT = {
     mainImage: 'assets/images/editorial/filosofia-semillas-tierra.jpg',
     mainImageAlt:
       'Manos sosteniendo tierra fértil, semillas criollas y un brote verde bajo luz natural cálida',
-    secondaryImage: 'assets/images/comunidad/cosecha-huerto-comunitario.jpg',
+    secondaryImage: 'assets/images/editorial/filosofia-frascos-semillas.jpg',
     secondaryImageAlt:
-      'Integrante de Eco Aldea Juárez NL mostrando una cosecha madura en el espacio de huerto comunitario con camas de madera',
+      'Frascos de vidrio con semillas criollas mexicanas, sobres de papel y vainas secas sobre mesa de madera',
     pillars: [
       {
         id: 'tierra',
@@ -192,87 +192,75 @@ export const SITE_CONTENT = {
     ],
     items: [
       {
-        id: 'act-cosecha-semillas',
-        src: 'assets/images/comunidad/cosecha-huerto-comunitario.jpg',
-        alt: 'Integrante de Eco Aldea Juárez NL en el huerto comunitario mostrando un fruto seco para recolección y conservación de semillas',
-        title: 'Cosecha y Conservación de Semillas',
-        category: 'cultivos',
-        categoryLabel: 'Cultivos y conservación de semillas',
+        id: 'act-jornada-comunitaria',
+        src: 'assets/images/editorial/act-1-jornada-trabajo.jpg',
+        alt: 'Voluntarios trabajando juntos con palas, rastrillos y carretillas preparando la tierra del huerto en Nuevo León',
+        title: 'Jornadas Colectivas de Trabajo en la Tierra',
+        category: 'espacios',
+        categoryLabel: 'Jornadas de trabajo',
         description:
-          'Recolección de frutos maduros en el huerto para el rescate y resguardo de semillas destinadas a nuevas siembras.',
-        sourceBadge: 'Fotografía real del proyecto',
+          'Mañanas de colaboración donde preparamos el suelo, movemos composta y acondicionamos juntos las áreas de cultivo.',
+        sourceBadge: 'Actividad comunitaria',
         span: 'featured'
       },
       {
-        id: 'act-fogata-convivencia',
-        src: 'assets/images/comunidad/fogata-convivencia-nocturna.jpg',
-        alt: 'Fogata nocturna encendida durante un encuentro de convivencia en Eco Aldea Juárez NL',
-        title: 'Fogatas y Convivencia Comunitaria',
-        category: 'convivencia',
-        categoryLabel: 'Fogatas y convivencia',
+        id: 'act-conservacion-semillas',
+        src: 'assets/images/editorial/act-4-conservacion-semillas.jpg',
+        alt: 'Manos seleccionando y limpiando semillas criollas en cestas tejidas y platos de barro sobre una mesa de madera',
+        title: 'Selección y Conservación de Semillas',
+        category: 'cultivos',
+        categoryLabel: 'Conservación de semillas',
         description:
-          'Al caer la tarde, el fuego reúne a las personas para dialogar, organizar jornadas y fortalecer el vínculo humano.',
-        sourceBadge: 'Fotografía real del proyecto',
+          'Encuentros para limpiar, seleccionar, secar y etiquetar semillas criollas que darán vida a las siguientes temporadas.',
+        sourceBadge: 'Banco vivo de semillas',
         span: 'standard'
       },
       {
-        id: 'act-espacio-arboles',
-        src: 'assets/images/comunidad/espacio-convivencia-arboles.jpg',
-        alt: 'Mesa de convivencia al aire libre bajo la sombra de los árboles en el terreno de Eco Aldea Juárez NL',
-        title: 'Encuentros Comunitarios al Aire Libre',
-        category: 'convivencia',
-        categoryLabel: 'Actividades al aire libre',
+        id: 'act-cultivos-policultivo',
+        src: 'assets/images/editorial/act-3-cultivos-huerto.jpg',
+        alt: 'Huerto biodiverso con jitomates criollos, flores de calabaza, acelgas, albahaca y flores de cempasúchil al sol',
+        title: 'Cultivos Biodiversos y Asociación de Plantas',
+        category: 'cultivos',
+        categoryLabel: 'Cultivos y flores aliadas',
         description:
-          'Espacios sencillos bajo la sombra de los árboles para compartir alimentos, ideas y aprendizajes en contacto con la naturaleza.',
-        sourceBadge: 'Fotografía real del proyecto',
+          'Siembra asociada de hortalizas, hierbas aromáticas y flores polinizadoras que protegen y nutren el suelo de forma natural.',
+        sourceBadge: 'Cultivo agroecológico',
         span: 'standard'
       },
       {
-        id: 'act-preparacion-madera',
-        src: 'assets/images/comunidad/preparacion-espacios-madera.jpg',
-        alt: 'Estructuras y camas de cultivo construidas con tarimas de madera reutilizada en el huerto de Eco Aldea Juárez NL',
-        title: 'Preparación de Espacios y Camas de Cultivo',
+        id: 'act-preparacion-camas',
+        src: 'assets/images/editorial/act-2-preparacion-camas.jpg',
+        alt: 'Manos construyendo camas elevadas con madera reutilizada y rellenándolas con ramas, hojas secas y tierra fértil',
+        title: 'Construcción de Camas de Cultivo y Composteras',
         category: 'espacios',
         categoryLabel: 'Preparación de espacios',
         description:
-          'Aprovechamiento de madera y materiales accesibles para delimitar áreas de siembra, compostaje y trabajo colectivo.',
-        sourceBadge: 'Fotografía real del proyecto',
+          'Armado de bancales con madera recuperada aplicando capas de ramas, hojarasca y tierra negra para conservar la humedad.',
+        sourceBadge: 'Bioconstrucción y suelo',
         span: 'standard'
       },
       {
-        id: 'act-crianza-aves',
-        src: 'assets/images/comunidad/crianza-aves-corral.jpg',
-        alt: 'Cuidado de aves de corral dentro del espacio comunitario de Eco Aldea Juárez NL',
-        title: 'Cuidado de Aves y Autosuficiencia',
+        id: 'act-germinacion-cuidado',
+        src: 'assets/images/editorial/act-primera-semilla-brote.jpg',
+        alt: 'Manos regando con cuidado un brote verde recién germinado en una maceta de barro bajo la luz del sol',
+        title: 'Germinación, Almácigos y Cuidado de Brotes',
         category: 'autosuficiencia',
-        categoryLabel: 'Jornadas de trabajo',
+        categoryLabel: 'Cuidado y germinación',
         description:
-          'El contacto cotidiano con los ciclos de la granja y el cuidado responsable de aves de corral como parte del aprendizaje integral.',
-        sourceBadge: 'Fotografía real del proyecto',
+          'Acompañamiento paso a paso desde la siembra en almácigo hasta el trasplante de cada nueva planta al huerto comunitario.',
+        sourceBadge: 'Aprendizaje práctico',
         span: 'standard'
       },
       {
-        id: 'act-huevos-campo',
-        src: 'assets/images/comunidad/cesta-huevos-campo.jpg',
-        alt: 'Gallinas y recolección de huevos de campo en nido tradicional de Eco Aldea Juárez NL',
-        title: 'Frutos del Cuidado Cotidiano',
-        category: 'autosuficiencia',
-        categoryLabel: 'Cultivos y vida natural',
+        id: 'act-convivencia-familiar',
+        src: 'assets/images/editorial/ninos-hero-familia.jpg',
+        alt: 'Familia intergeneracional plantando un árbol frutal joven en el huerto comunitario',
+        title: 'Reforestación y Encuentros Intergeneracionales',
+        category: 'convivencia',
+        categoryLabel: 'Encuentros comunitarios',
         description:
-          'La constancia y el respeto por los ritmos naturales nos enseñan el valor de producir con paciencia y gratitud.',
-        sourceBadge: 'Fotografía real del proyecto',
-        span: 'standard'
-      },
-      {
-        id: 'act-jornada-huerto',
-        src: 'assets/images/comunidad/jornada-huerto-semillas.jpg',
-        alt: 'Jornada de trabajo en el huerto bajo el sol de Nuevo León en Eco Aldea Juárez NL',
-        title: 'Jornadas de Trabajo en el Huerto',
-        category: 'espacios',
-        categoryLabel: 'Jornadas de trabajo',
-        description:
-          'Mañanas y tardes dedicadas a limpiar, sembrar, regar y organizar en conjunto las áreas verdes del proyecto.',
-        sourceBadge: 'Fotografía real del proyecto',
+          'Actividades al aire libre donde niñas, niños, jóvenes y adultos plantan árboles y comparten saberes en comunidad.',
+        sourceBadge: 'Comunidad viva',
         span: 'standard'
       }
     ]
@@ -378,8 +366,8 @@ export const SITE_CONTENT = {
     title: 'Pequeñas manos que siembran el mañana.',
     subtitle:
       'Creemos que el amor por la naturaleza se aprende tocando la tierra, observando cómo germina una semilla y descubriendo la vida que habita en el huerto en familia.',
-    image: 'assets/images/comunidad/zona-ninos-sembrando.jpg',
-    imageAlt: 'Niña aprendiendo a sembrar semillas en macetas de barro junto a su familia al aire libre',
+    image: 'assets/images/editorial/ninos-hero-familia.jpg',
+    imageAlt: 'Familia mexicana intergeneracional plantando juntos un árbol frutal joven en un huerto soleado',
     activities: [
       {
         id: 'kids-semilla',
@@ -461,8 +449,8 @@ export const SITE_CONTENT = {
         title: 'El tesoro que guardamos en las manos: ¿Cómo conservar nuestras propias semillas?',
         excerpt:
           'Las mejores semillas no se compran en un empaque industrial: se heredan, se rescatan y se guardan con paciencia. Conoce los 4 pasos esenciales para resguardarlas.',
-        image: 'assets/images/comunidad/cosecha-huerto-comunitario.jpg',
-        imageAlt: 'Cosecha de fruto maduro en el huerto comunitario de Eco Aldea Juárez NL para extracción de semillas',
+        image: 'assets/images/editorial/blog-1-semillas-criollas.jpg',
+        imageAlt: 'Cuencos de barro con semillas criollas mexicanas de maíz, frijol, calabaza, amaranto y chiles secos sobre mesa de madera',
         content: [
           'Muchos compañeros de la comunidad nos preguntan: ¿Adónde se consiguen las semillas? ¿Cómo dar el salto hacia una vida menos estandarizada y empezar a cultivar nuestra propia soberanía alimentaria? La respuesta más sincera es que las mejores semillas se rescatan, se cuidan y se comparten con paciencia.',
           '1. La Cosecha en su Punto Justo: Espera siempre a que el fruto o la flor alcancen su madurez completa en la planta, preferiblemente en un día seco y soleado. La naturaleza misma te avisa cuando están listas para ser recolectadas.',
@@ -478,9 +466,9 @@ export const SITE_CONTENT = {
         readTime: '5 min de lectura',
         title: 'De residuos a tierra fértil: Guía sencilla de compostaje para el clima de Nuevo León',
         excerpt:
-          'Aprende a equilibrar hojas secas ("material café") y restos de cocina ("material verde") manteniendo la humedad ideal frente al calor del norte.',
-        image: 'assets/images/editorial/filosofia-semillas-tierra.jpg',
-        imageAlt: 'Tierra negra fértil y húmeda sostenida entre las manos con un brote verde',
+          'Aprende a equilibrar hojas secas («material café») y restos de cocina («material verde») manteniendo la humedad ideal frente al calor del norte.',
+        image: 'assets/images/editorial/blog-2-composta-organica.jpg',
+        imageAlt: 'Compostera de madera con tierra negra fértil sostenida en guantes de trabajo junto a hojarasca y restos vegetales',
         content: [
           'Un huerto sano empieza siempre por un suelo vivo. En lugar de ver las cáscaras de verdura, restos de café o las hojas secas de los árboles como basura, en la eco aldea los reconocemos como el alimento principal de la tierra.',
           'El equilibrio entre Café y Verde: Para que una composta huela a tierra de bosque y nunca genere malos olores, combina aproximadamente 2 partes de material seco (hojas secas, aserrín natural sin barniz, cartón sin tinta, paja) por cada parte de material fresco (cáscaras de frutas, verduras y poda verde).',
@@ -496,8 +484,8 @@ export const SITE_CONTENT = {
         title: 'Camas de cultivo con madera reutilizada: Construir con lo que tenemos a la mano',
         excerpt:
           'Cómo aprovechar tarimas y maderas recuperadas para delimitar espacios de siembra ordenados, accesibles y resistentes.',
-        image: 'assets/images/comunidad/preparacion-espacios-madera.jpg',
-        imageAlt: 'Camas de cultivo y estructuras armadas con tarimas de madera en Eco Aldea Juárez NL',
+        image: 'assets/images/editorial/blog-3-huerto-biointensivo.jpg',
+        imageAlt: 'Camas elevadas de madera acolchadas con paja dorada, hortalizas verdes y regadera metálica al atardecer',
         content: [
           'Construir un espacio agroecológico no requiere grandes presupuestos industriales; requiere creatividad, colaboración y respeto por los recursos disponibles. Las tarimas de madera recuperada (tratadas únicamente con calor, sello HT) son extraordinarias aliadas en el huerto.',
           'Ventajas de las camas elevadas: Permiten concentrar la tierra fértil y la composta exactamente donde crecerán las raíces, mejoran el drenaje cuando llueve fuerte, facilitan el trabajo sin pisar ni compactar el suelo y ayudan a mantener el orden en las jornadas colectivas.',

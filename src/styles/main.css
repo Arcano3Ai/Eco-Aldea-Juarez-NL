@@ -1115,19 +1115,28 @@ ul {
 
 .activity-filters {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   gap: 0.6rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
+  overflow-x: auto;
+  padding-bottom: 0.45rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.activity-filters::-webkit-scrollbar {
+  display: none;
 }
 
 .filter-chip {
-  padding: 0.6rem 1.15rem;
+  flex-shrink: 0;
+  padding: 0.65rem 1.15rem;
   border-radius: var(--radius-pill);
   font-size: 0.84rem;
   font-weight: 600;
   color: var(--forest-deep);
-  background: rgba(251, 249, 244, 0.75);
+  background: rgba(251, 249, 244, 0.82);
   border: 1px solid rgba(72, 92, 61, 0.25);
   transition: all 240ms ease;
 }
@@ -2157,8 +2166,8 @@ ul {
 /* Botón Flotante de WhatsApp */
 .floating-whatsapp {
   position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  bottom: 4.85rem;
+  right: 1rem;
   z-index: 950;
   display: inline-flex;
   align-items: center;
@@ -2186,6 +2195,42 @@ ul {
 
 .floating-whatsapp-label {
   display: none;
+}
+
+/* Barra inferior ergonómica exclusiva para teléfonos móviles (<640px) */
+.mobile-bottom-dock {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 940;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(12, 27, 19, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(233, 196, 106, 0.28);
+  padding: 0.4rem 0.5rem calc(0.4rem + env(safe-area-inset-bottom, 0px));
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.mobile-dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0.35rem 0.25rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-on-dark-muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.mobile-dock-item--wa {
+  background: rgba(37, 211, 102, 0.18);
+  color: #4ade80;
+  border: 1px solid rgba(37, 211, 102, 0.35);
 }
 
 /* ==========================================================================
@@ -2229,6 +2274,21 @@ ul {
 @media (min-width: 640px) {
   .container {
     padding-inline: 2rem;
+  }
+
+  .activity-filters {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .mobile-bottom-dock {
+    display: none;
+  }
+
+  .floating-whatsapp {
+    bottom: 1.25rem;
+    right: 1.25rem;
   }
 
   .hero-actions {
