@@ -197,6 +197,8 @@ test('4. HTML Semántico, SEO, Open Graph, Accesibilidad y Ausencia de Backend/F
   assert.match(html, /id="lightbox-modal"/);
   assert.match(html, /role="dialog"/);
   assert.match(html, /id="hero-brand-video"[^>]*src="assets\/video\/hero-eco-aldea\.mp4"/i);
+  assert.doesNotMatch(html, /class="hero-video-frame"/i, 'El video debe ocupar todo el Hero sin caja contenedora');
+  assert.doesNotMatch(html, /class="hero-overlay"/i, 'El Hero de video no debe tener capa de opacidad encima');
   assert.ok(
     fs.existsSync(path.resolve(ROOT, 'assets/video/hero-eco-aldea.mp4')),
     'El video oficial del Hero assets/video/hero-eco-aldea.mp4 debe existir en disco'
@@ -236,6 +238,8 @@ test('5. Sistema de Diseño CSS Mobile-First y Paleta Orgánica', () => {
   // Prevención de overflow horizontal y soporte de movimiento reducido
   assert.match(css, /overflow-x:\s*hidden/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
+  assert.match(css, /\.hero-brand-video\s*\{[^}]*opacity:\s*1/s);
+  assert.match(css, /\.hero-brand-video\s*\{[^}]*filter:\s*none/s);
 });
 
 test('6. Verificación E2E de servidor estático y carga HTTP 200 de todos los recursos', async () => {

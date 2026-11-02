@@ -63,6 +63,7 @@ export function createStaticServer() {
           'Accept-Ranges': 'bytes',
           'Content-Length': chunksize,
           'Content-Type': contentType,
+          'Cache-Control': 'no-store, no-cache, must-revalidate',
           Connection: 'close'
         });
         fs.createReadStream(filePath, { start, end }).pipe(res);
@@ -73,7 +74,7 @@ export function createStaticServer() {
         'Content-Type': contentType,
         'Content-Length': stats.size,
         'Accept-Ranges': 'bytes',
-        'Cache-Control': 'no-cache',
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
         Connection: 'close'
       });
       fs.createReadStream(filePath).pipe(res);
