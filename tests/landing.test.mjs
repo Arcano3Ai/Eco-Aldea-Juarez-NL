@@ -196,7 +196,7 @@ test('4. HTML Semántico, SEO, Open Graph, Accesibilidad y Ausencia de Backend/F
   // Lightbox, video hero 720x720, música ambiental autoplay y botón flotante de WhatsApp
   assert.match(html, /id="lightbox-modal"/);
   assert.match(html, /role="dialog"/);
-  assert.match(html, /id="hero-brand-video"[^>]*src="assets\/video\/hero-eco-aldea\.mp4"/i);
+  assert.match(html, /id="hero-brand-video"[^>]*src="assets\/video\/hero-eco-aldea\.mp4(\?v=\d+)?"/i);
   assert.doesNotMatch(html, /class="hero-video-frame"/i, 'El video debe ocupar todo el Hero sin caja contenedora');
   assert.doesNotMatch(html, /class="hero-overlay"/i, 'El Hero de video no debe tener capa de opacidad encima');
   assert.ok(
