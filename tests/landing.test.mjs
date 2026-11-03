@@ -162,7 +162,7 @@ test('4. HTML Semántico, SEO, Open Graph, Accesibilidad y Ausencia de Backend/F
   assert.match(html, /<meta\s+name="description"\s+content="[^"]*Juárez,\s*Nuevo León[^"]*"/i);
   assert.match(html, /property="og:title"/);
   assert.match(html, /property="og:description"/);
-  assert.match(html, /property="og:image"\s+content="assets\/images\/brand\/og-whatsapp-share\.jpg"/);
+  assert.match(html, /property="og:image"\s+content="(https:\/\/arcano3ai\.github\.io\/Eco-Aldea-Juarez-NL\/)?assets\/images\/brand\/og-whatsapp-share\.jpg(\?v=\d+)?"/);
   assert.match(html, /property="og:image:width"\s+content="1200"/);
   assert.match(html, /property="og:image:height"\s+content="630"/);
 
